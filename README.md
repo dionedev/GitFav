@@ -13,6 +13,6 @@
 
 <div align="center">
   <img src="src/assets/gitFav.gif" alt="gif do projeto git favorites" />
-  <a href="">Try GitFav</a>
+  [Try GitFav]()
 </div>
 
