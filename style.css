@@ -1,0 +1,264 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+:root {
+	font-size: 62.5%;
+
+	--ff-primary: 'Roboto', sans-serif;
+
+	--primary-color: #E1E1E6;
+
+	--bg-color: #000000;
+	--bg-input: #06181C;
+	--bg-button: #065E7C;
+	--bg-button-hover: #05475d;
+	--bg-thead: #092D38;
+	--bg-tr-odd: rgba(6, 22, 27, 0.5);
+	--bg-tr-even: #06181C;
+	--bg-scrollbar-thumb: #4A808C;
+
+	--border-color: #4A808C;
+
+	--fc-placeholder: #7C7C8A;
+	--fc-button: #FFFFFF;
+	--fc-username-hover: #c9c9c9;
+}
+
+body {
+	font-size: clamp(1rem, 2.5vw, 1.8rem);
+	background-color: var(--bg-color);
+	font-family: var(--ff-primary)
+}
+
+#container {
+	margin: 0 auto;
+	max-width: 112rem;
+	padding: 1rem;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	align-items: center;
+	justify-content: center;
+}
+
+.search {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	gap: .8rem;
+}
+
+.search input {
+	width: 100%;
+	color: var(--fc-placeholder);
+	font-weight: 400;
+	background: var(--bg-input);
+	border: none;
+	border-radius: 5px;
+	height: 4.8rem;
+	padding-left: 1rem;
+	font-size: 1.6rem;
+}
+
+header .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.search button {
+	display: flex;
+	height: 4.8rem;
+	border-radius: 5px;
+	border: none;
+	padding: 0 1rem;
+	background-color: var(--bg-button);
+	color: var(--fc-button);
+	text-transform: uppercase;
+	align-items: center;
+	gap: .8rem;
+	cursor: pointer;
+}
+
+.search button img {
+	animation: starEffect 0.8s infinite;
+}
+
+.search button:hover {
+	background-color: var(--bg-button-hover);
+}
+
+.tableSection {
+	border: 1px solid var(--border-color);
+	border-radius: 1.1rem;
+	overflow: hidden;
+	margin-top: 8rem;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+table * {
+	color: var(--primary-color);
+}
+
+table thead {
+	background-color: var(--bg-thead);
+}
+
+table thead th {
+	text-align: left;
+	color: var(--primary-color);
+	font-weight: bold;
+	padding: 1.6rem 2.4rem 1.6rem 2rem;
+}
+
+table th:first-child {
+	border-top-left-radius: 1rem;
+}
+
+table th:last-child {
+	border-top-right-radius: 1rem;
+}
+
+table tr {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  border-bottom:  1px solid var(--border-color);
+}
+
+table tbody{
+  display: block;
+  overflow-y: overlay;
+  max-height: 34rem;
+  scroll-behavior: smooth;
+}
+
+table tbody tr:nth-child(odd) {
+	background-color: var(--bg-tr-odd);
+}
+
+table tbody tr:nth-child(even) {
+	background-color: var(--bg-tr-even);
+}
+
+table tbody td:nth-child(1) {
+	padding: 2.4rem 2.4rem 2.4rem 2rem;
+	text-align: left;
+}
+
+table tbody td:nth-child(n+2) {
+	padding: 2.4rem 2.4rem 2.4rem 2rem;
+	text-align: center;
+}
+
+td.user {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+ td.user img {
+	width: 5rem;
+	height: 5rem;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+td.user p {
+	font-weight: bold;
+}
+
+td.user span:hover {
+	color: var(--fc-username-hover);
+}
+
+table tbody .trash {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+::-webkit-scrollbar {
+	width: 2rem;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	padding: 20px;
+  border: 6px solid rgba(0, 0, 0, 0); 
+  background-color: var(--bg-scrollbar-thumb);
+  background-clip: padding-box;
+  border-radius: 1rem;
+}
+
+.cleanTableImage {
+	background: url(./src/assets/StarNoFavorite.svg) no-repeat center;
+  background-size: contain;
+	height: 34rem;
+}
+
+/* ANIMATION */
+@keyframes starEffect {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* RESPONSIVE WEB */
+
+@media (min-width: 650px) {
+
+	header {
+		flex-direction: row;
+		justify-content: space-between;
+		margin-top: 7rem;
+	}
+
+	.search {
+		width: auto;
+		overflow: hidden;
+	}
+
+  .search input{
+    width: 47rem;
+  }
+
+	table thead th:nth-child(n+2) {
+		padding: 1.6rem 2.4rem 1.6rem 2rem;
+		text-align: center;
+	}
+
+	table tbody td:nth-child(1) {
+		padding: 2.4rem 2.4rem 2.4rem 2rem;
+		text-align: left;
+	}
+	
+	table tbody td:nth-child(n+2) {
+		padding: 2.4rem 2.4rem 2.4rem 2rem;
+		text-align: center;
+	}
+}
