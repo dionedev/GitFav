@@ -5,14 +5,15 @@
 <br>
 
 ## About
-<p>
-  The goal of this challenge was to practice object orientation in javascript, immutability, promises, responsive layout and manipulating tables in the DOM (Document Object Model).
-</p> 
+
+The goal of this challenge was to practice object orientation in javascript, immutability, promises, responsive layout and manipulating tables in the DOM (Document Object Model).
 
 <br>
 
 <div align="center">
+  <h2>GIF</h2>
   <img src="src/assets/gitFav.gif" alt="gif do projeto git favorites" />
-  [Try GitFav]()
+  
+  :link: [Try GitFav]()
 </div>
 
