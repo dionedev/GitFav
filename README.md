@@ -13,7 +13,5 @@ The goal of this challenge was to practice object orientation in javascript, imm
 <div align="center">
   <h2>GIF</h2>
   <img src="src/assets/gitFav.gif" alt="gif do projeto git favorites" />
-  
-  :link: [Try GitFav]()
 </div>
 
